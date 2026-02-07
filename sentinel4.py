@@ -5,6 +5,7 @@ from openai import OpenAI
 import sqlite3
 import time
 from datetime import datetime
+import random
 
 # ==========================================
 # 1. SETUP DATABASE (DUAL DB ARCHITECTURE)
@@ -189,7 +190,8 @@ with st.sidebar:
         if new_amount > 9000: flag, reason = "Suspicious", "Structuring / High Vol"
         if new_loc in ["North Korea", "Iran", "Russia"]: flag, reason = "Suspicious", "Sanctioned Geo"
         
-        new_id = f"TXN_{datetime.now().strftime('%M%S')}"
+        #new_id = f"TXN_{datetime.now().strftime('%M%S')}"
+        new_id = f"TXN_{random.randint(10000, 99999)}"
         add_transaction(new_id, new_user, new_amount, "Transfer", new_loc, flag, reason)
         st.success("Injected!")
         st.rerun()
@@ -381,3 +383,4 @@ with tab2:
                 time.sleep(1) # Jeda sedikit biar user lihat toast
 
                 st.rerun() # Refresh halaman agar Tabel Kiri berubah datanya
+
