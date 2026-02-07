@@ -289,7 +289,7 @@ with tab1:
 
 with tab2:
     st.header("📰 Regulatory Intelligence Engine")
-    st.caption("AI memonitor berita regulasi dan mencocokkannya dengan database aturan internal.")
+    st.caption("Sentinel AI monitors regulatory news and matches it against an internal rules database.")
     
     col_db, col_sim = st.columns([1, 1])
     
@@ -383,6 +383,7 @@ with tab2:
                 time.sleep(1) # Jeda sedikit biar user lihat toast
 
                 st.rerun() # Refresh halaman agar Tabel Kiri berubah datanya
+
 
 
 
