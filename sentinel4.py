@@ -281,7 +281,7 @@ with tab1:
                         
         else:
             # Tampilan Default (Jika belum ada yang diklik)
-            st.info("👈 Silakan **KLIK salah satu baris** di tabel sebelah kiri untuk memulai investigasi AI.")
+            st.info("👈 Select **A ROW Datta** from the table to Start Sentinel AI Investigation")
             st.image("https://cdn-icons-png.flaticon.com/512/6134/6134346.png", width=100)
             st.caption("AI standby waiting for selection...")
 
@@ -383,4 +383,5 @@ with tab2:
                 time.sleep(1) # Jeda sedikit biar user lihat toast
 
                 st.rerun() # Refresh halaman agar Tabel Kiri berubah datanya
+
 
