@@ -166,7 +166,18 @@ with st.sidebar:
         <hr>
         """, unsafe_allow_html=True)
 
-    api_key = st.text_input("OpenAI API Key", type="password")
+    #api_key = st.text_input("OpenAI API Key", type="password")
+    # --- GANTI BARIS LAMA DENGAN BLOK INI ---
+    
+    # 1. Cek dulu apakah ada Kunci Rahasia di Server (Secrets)
+    if "OPENAI_API_KEY" in st.secrets:
+        st.success("✅ API Key Loaded from Secrets")
+        api_key = st.secrets["OPENAI_API_KEY"]
+    
+    # 2. Jika tidak ada (misal dijalankan di laptop tanpa setup), baru minta input
+    else:
+        st.warning("⚠️ Manual Mode")
+        api_key = st.text_input("Enter OpenAI API Key", type="password")
     
     st.divider()
     st.subheader("⚡ Simulate Transaction")
@@ -368,4 +379,5 @@ with tab2:
                 # 3. Feedback Visual
                 st.toast(f"✅ Rule '{target_category}' successfully updated in SQL Database!", icon="💾")
                 time.sleep(1) # Jeda sedikit biar user lihat toast
+
                 st.rerun() # Refresh halaman agar Tabel Kiri berubah datanya
