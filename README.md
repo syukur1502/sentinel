@@ -13,5 +13,5 @@
 * **Data:** SQLite, Pandas, Plotly
 
 ## ⚙️ How to Run
-1. Access the Live Demo: 
+1. Access the Live Demo: https://sentinelcompliance.streamlit.app/
 2. (Optional) Enter your own OpenAI API Key in the sidebar if the quota is exhausted.
